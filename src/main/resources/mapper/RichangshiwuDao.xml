@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RichangshiwuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RichangshiwuEntity" id="richangshiwuMap">
+        <result property="bianhao" column="bianhao"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="biaoti" column="biaoti"/>
+        <result property="neirong" column="neirong"/>
+        <result property="shijian" column="shijian"/>
+        <result property="jiafenshixiang" column="jiafenshixiang"/>
+        <result property="pingfenbiaozhun" column="pingfenbiaozhun"/>
+        <result property="beizhu" column="beizhu"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RichangshiwuVO" >
+		SELECT * FROM richangshiwu  richangshiwu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RichangshiwuVO" >
+		SELECT  richangshiwu.* FROM richangshiwu  richangshiwu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RichangshiwuView" >
+
+		SELECT  richangshiwu.* FROM richangshiwu  richangshiwu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RichangshiwuView" >
+		SELECT * FROM richangshiwu  richangshiwu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
